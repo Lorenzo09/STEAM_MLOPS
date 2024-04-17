@@ -5,7 +5,7 @@ from utils import userdata
 from typing import Dict
 from fastapi.encoders import jsonable_encoder
 
-df_steam_games = pd.read_parquet(r'C:\Users\loren\Desktop\HENRY\pi\STEAM_MLOPS\Datasets\pdf_SteamGames.parquet')
+df_steam_games = pd.read_parquet('./Datasets/pdf_SteamGames.parquet')
 
 app = FastAPI()
 
@@ -14,7 +14,7 @@ async def get_developer_info(desarrollador: str):
     result = developer(desarrollador, df_steam_games)
     return result.to_dict(orient='records')
 
-PARQUET_FILE_PATH = r'C:\Users\loren\Desktop\HENRY\pi\STEAM_MLOPS\Datasets\df_segunda_consulta.parquet'
+PARQUET_FILE_PATH = ("./Datasets/df_segunda_consulta.parquet")
 
 @app.get("/userdata/{User_id}")
 async def get_userdata(User_id: str) -> Dict[str, str]:

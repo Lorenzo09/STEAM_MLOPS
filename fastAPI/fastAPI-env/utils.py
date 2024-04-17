@@ -1,7 +1,7 @@
 import pandas as pd
 from typing import Dict
 
-df_steam_games = pd.read_parquet(r'C:\Users\loren\Desktop\HENRY\pi\STEAM_MLOPS\Datasets\pdf_SteamGames.parquet')
+df_steam_games = pd.read_parquet('./Datasets/pdf_SteamGames.parquet')
 
 def developer(desarrollador: str, df_steam_games: pd.DataFrame):
     # Filtrar por desarrollador
@@ -32,7 +32,7 @@ def developer(desarrollador: str, df_steam_games: pd.DataFrame):
 
 
 # Definir la ruta al archivo parquet
-PARQUET_FILE_PATH = r'C:\Users\loren\Desktop\HENRY\pi\STEAM_MLOPS\Datasets\df_segunda_consulta.parquet'
+PARQUET_FILE_PATH = ("./Datasets/df_segunda_consulta.parquet")
 
 def userdata(User_id: str) -> Dict[str, str]:
     # Cargar el DataFrame desde el archivo parquet
