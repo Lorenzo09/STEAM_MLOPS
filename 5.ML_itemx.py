@@ -1,1 +1,0 @@
-#Machine Learning para recomendación de juego, utilizando similitud de coseno
